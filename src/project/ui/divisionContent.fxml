@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.controlsfx.control.SearchableComboBox?>
+<?import javafx.scene.text.Text?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="project.ui.DivisionContentController"
+            prefHeight="400.0" prefWidth="600.0">
+    <top>
+        <VBox maxWidth="Infinity" prefWidth="Infinity" alignment="CENTER" style="-fx-padding: 20 20 20 20">
+            <Text fx:id="panelTitle">Movies Shown in All Theatres</Text>
+            <HBox alignment="CENTER">
+                <Text fx:id="panelSubTitle">for the Selected Venue</Text>
+                <Text fx:id="panelVenue"></Text>
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <VBox spacing="10" >
+            <HBox spacing="10" alignment="CENTER">
+                <Label >Select a Venue:</Label>
+                <SearchableComboBox fx:id="scbVenue"></SearchableComboBox>
+            </HBox>
+            <TableView fx:id="moviesTable" maxWidth="Infinity" maxHeight="Infinity" minWidth="600">
+                <columns>
+                    <TableColumn fx:id="colMovieID" text="Movie ID" prefWidth="160"/>
+                    <TableColumn fx:id="colMovieTitle" text="Movie Title" prefWidth="160"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>

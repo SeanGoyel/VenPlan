@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.controlsfx.control.SearchableComboBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.shape.Box?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="project.ui.DeleteContentController"
+            prefHeight="400.0" prefWidth="600.0"
+            fx:id="borderPane">
+    <top>
+        <VBox maxWidth="Infinity" alignment="CENTER" style="-fx-padding: 10 10 10 10">
+            <Text fx:id="panelTitle">Delete a Seat from UsedSeat</Text>
+            <Text fx:id="panelSubTitle">Select a showing from the dropdown</Text>
+        </VBox>
+    </top>
+    <center>
+        <VBox spacing="5" alignment="TOP_CENTER"
+              maxWidth="Infinity" prefWidth="Infinity">
+            <SearchableComboBox fx:id="scbShowings"/>
+            <Text>Click a used seat (red) to delete it from the used seat and make it available (green)</Text>
+            <VBox fx:id="seatMapPanel" alignment="TOP_CENTER"
+                  maxWidth="Infinity" prefWidth="Infinity" >
+                <GridPane fx:id="seatMapGrid"/>
+            </VBox>
+        </VBox>
+    </center>
+    <bottom>
+
+    </bottom>
+</BorderPane>

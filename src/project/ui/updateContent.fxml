@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import project.util.DateTimePicker?>
+<?import org.controlsfx.control.SearchableComboBox?>
+<?import javafx.scene.text.Text?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="project.ui.UpdateContentController"
+            maxWidth="Infinity" maxHeight="Infinity"
+>
+    <!-- top -->
+    <top>
+        <VBox maxWidth="Infinity" alignment="CENTER" style="-fx-padding: 10 10 10 10">
+            <Text fx:id="panelTitle">Update Showing</Text>
+            <Text fx:id="panelSubTitle">Select a Showing to update from the table</Text>
+        </VBox>
+    </top>
+    <!-- center -->
+    <!-- tableview with all the showing rows that fit the criteria -->
+    <center>
+        <VBox maxWidth="Infinity">
+            <Label>Click row to select it for edit</Label>
+            <TableView fx:id="showingsTable" maxWidth="Infinity" maxHeight="Infinity">
+                <columns>
+                    <TableColumn fx:id="colID" text="ID" prefWidth="40"/>
+                    <TableColumn fx:id="colVenue" text="Venue" prefWidth="100"/>
+                    <TableColumn fx:id="colTheatre" text="Theatre" prefWidth="65"/>
+                    <TableColumn fx:id="colMovie" text="Movie" prefWidth="100"/>
+                    <TableColumn fx:id="colStartDTM" text="Start" prefWidth="125"/>
+                    <TableColumn fx:id="colEndDTM" text="End" prefWidth="125"/>
+                    <TableColumn fx:id="colLength" text="Length" prefWidth="50"/>
+                    <TableColumn fx:id="colStatus" text="End" prefWidth="175"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+    <!-- right -->
+    <!-- data entry to modify fields for update -->
+    <right>
+        <GridPane fx:id="gridEdits"
+                  style="-fx-padding: 10 10 10 10" hgap="10" vgap="10">
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="0">
+                Showing ID:
+            </Label>
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="150"
+                       fx:id="tfShowingID" editable="false"/>
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="1">
+                Venue:
+            </Label>
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" prefWidth="150"
+                       fx:id="tfVenue" editable="false"/>
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="2">
+                Theatre:
+            </Label>
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="150"
+                       fx:id="tfTheatre" editable="false"/>
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="3">
+                Movie:
+            </Label>
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" prefWidth="150"
+                       fx:id="tfMovie" editable="false"/>
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="4">
+                Start Date Time:
+            </Label>
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" prefWidth="150"
+                       fx:id="tfStartDTM" editable="false"/>
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="5">
+                End Date Time:
+            </Label>
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" prefWidth="150"
+                       fx:id="tfEndDTM" editable="false"/>
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="6">
+                Status:
+            </Label>
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" prefWidth="150"
+                       fx:id="tfStatus" editable="false"/>
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="7">
+                Length:
+            </Label>
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="7" prefWidth="150"
+                       fx:id="tfLength" editable="false"/>
+            <Separator GridPane.columnIndex="1" GridPane.rowIndex="8" ></Separator>
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="9">
+                NEW Start Date Time:
+            </Label>
+            <DateTimePicker GridPane.columnIndex="1" GridPane.rowIndex="9" prefWidth="150"
+                            fx:id="dtpStartDTM"/>
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="10">
+                NEW End Date Time:
+            </Label>
+            <DateTimePicker GridPane.columnIndex="1" GridPane.rowIndex="10" prefWidth="150"
+                            fx:id="dtpEndDTM"/>
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="11">
+                NEW Status:
+            </Label>
+            <SearchableComboBox GridPane.columnIndex="1" GridPane.rowIndex="11" prefWidth="150"
+                                fx:id="scbStatus" editable="true"/>
+        </GridPane>
+    </right>
+    <!-- bottom -->
+    <!-- buttons to execute actions -->
+    <bottom>
+        <HBox alignment="BOTTOM_RIGHT" style="-fx-padding: 10 10 10 10" spacing="5">
+            <Button fx:id="btnCancel" prefWidth="75" onAction="#cancelButton">Cancel</Button>
+            <Button fx:id="btnOK" prefWidth="75" onAction="#saveButton">Save</Button>
+        </HBox>
+    </bottom>
+    <!-- left -->
+    <!-- not used -->
+</BorderPane>

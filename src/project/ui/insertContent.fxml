@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import project.util.DateTimePicker?>
+<?import org.controlsfx.control.SearchableComboBox?>
+<?import javafx.scene.text.Text?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller= "project.ui.InsertContentController"
+            prefHeight="400.0" prefWidth="600.0">
+    <top>
+        <VBox maxWidth="Infinity" alignment="CENTER" style="-fx-padding: 10 10 10 10">
+            <Text fx:id="panelTitle">Insert Showing</Text>
+            <Text fx:id="panelSubTitle">Select a Movie for the showing from the table</Text>
+        </VBox>
+    </top>
+
+<center>
+    <VBox>
+            <Label>Select movie for showing</Label>
+            <TableView fx:id="movieTable" maxWidth="Infinity" maxHeight="Infinity"  minWidth="300">
+                <columns>
+                    <TableColumn fx:id="colMovieID" text="MovieID" prefWidth="100"/>
+                    <TableColumn fx:id="colTitle" text="Movie" prefWidth="100"/>
+                    <TableColumn fx:id="colAdvRating" text="Advisory Rating" prefWidth="100"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+
+
+
+    <right>
+        <GridPane fx:id="gridEdits"
+                  style="-fx-padding: 10 10 10 10" hgap="10" vgap="10">
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="0">
+                Showing ID: </Label>
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="0"
+                       fx:id="tfShowingID" editable="true"/>
+
+            <Button fx:id="btnNextID" prefWidth="95" onAction="#getNextID" GridPane.columnIndex="2" GridPane.rowIndex="0">Generate ID</Button>
+
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="1">
+                Theatre:</Label>
+            <SearchableComboBox GridPane.columnIndex="1" GridPane.rowIndex="1"
+                                fx:id="scbTheatre" editable="true"/>
+
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="2">
+                Movie:</Label>
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2"
+                       fx:id="tfMovie" editable="false"/>
+
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="3">
+                Start Date Time:</Label>
+            <DateTimePicker GridPane.columnIndex="1" GridPane.rowIndex="3"
+                            fx:id="dtpStartDTM" />
+
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="4">
+                End Date Time:</Label>
+            <DateTimePicker GridPane.columnIndex="1" GridPane.rowIndex="4"
+                            fx:id="dtpEndDTM" />
+
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="5">
+                Seating Type:</Label>
+            <SearchableComboBox GridPane.columnIndex="1" GridPane.rowIndex="5"
+                                fx:id="seatType" editable="true"/>
+
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="6">
+                Status:</Label>
+            <SearchableComboBox GridPane.columnIndex="1" GridPane.rowIndex="6"
+                                fx:id="scbStatus" editable="true"/>
+
+            <Button fx:id="btnOK" prefWidth="75" onAction="#saveButton" GridPane.columnIndex="1" GridPane.rowIndex="8">Save</Button>
+
+            <Separator GridPane.columnIndex="1" GridPane.rowIndex="9"></Separator>
+
+
+
+
+
+        </GridPane>
+
+    </right>
+
+</BorderPane>

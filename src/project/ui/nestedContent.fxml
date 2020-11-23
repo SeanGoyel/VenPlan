@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller= "project.ui.NestedContentController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <top>
+        <VBox maxWidth="Infinity" alignment="CENTER" style="-fx-padding: 10 10 10 10">
+            <Text fx:id="panelTitle" >Total Available Capacity and Total Used Capacity</Text>
+            <Text fx:id="panelSubTitle" >Grouped By Venue, Movie and Capacity Type</Text>
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="usageTable" >
+            <columns>
+                <TableColumn fx:id="colVenueName" text="Venue Name" prefWidth="125"/>
+                <TableColumn fx:id="colMovieTitle" text="Movie Title" prefWidth="125"/>
+                <TableColumn fx:id="colCapacityType" text="Capacity Type" prefWidth="125"/>
+                <TableColumn fx:id="colAvailableCapacity" text="Available" prefWidth="50"/>
+                <TableColumn fx:id="colUsedCapacity" text="Used" prefWidth="50"/>
+                <TableColumn fx:id="colGraphicalDisplay" text="Graph" prefWidth="100"/>
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>

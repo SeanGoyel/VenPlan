@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.shape.Box?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="project.ui.MainDialogController"
+            prefHeight="400.0" prefWidth="600.0"
+>
+    <top>
+        <VBox fx:id="topContainer" maxWidth="Infinity" prefWidth="Infinity" alignment="CENTER" >
+            <Text fx:id="mainTitle"/>
+            <Text fx:id="mainSubTitle"/>
+        </VBox>
+    </top>
+    <!-- LEFT PANEL Selection buttons -->
+    <left>
+        <VBox  style="-fx-padding: 75 10 10 10" spacing="2" alignment="TOP_CENTER">
+            <ToggleButton fx:id="tbWelcome" onAction="#showTaskContent"
+                          maxWidth="Infinity">Welcome
+                <toggleGroup>
+                    <ToggleGroup fx:id="toggleGroupTasks"/>
+                </toggleGroup>
+            </ToggleButton>
+            <Separator></Separator>
+            <Text fx:id="queryText">Queries</Text>
+            <Separator></Separator>
+            <ToggleButton toggleGroup="$toggleGroupTasks" fx:id="tbInsert" onAction="#showTaskContent"
+                          maxWidth="Infinity">Insert
+            </ToggleButton>
+            <ToggleButton toggleGroup="$toggleGroupTasks" fx:id="tbDelete" onAction="#showTaskContent"
+                          maxWidth="Infinity">Delete
+            </ToggleButton>
+            <ToggleButton toggleGroup="$toggleGroupTasks" fx:id="tbUpdate" onAction="#showTaskContent"
+                          maxWidth="Infinity">Update
+            </ToggleButton>
+            <ToggleButton toggleGroup="$toggleGroupTasks" fx:id="tbSelection" onAction="#showTaskContent"
+                          maxWidth="Infinity" visible="false" managed="false">Selection
+            </ToggleButton>
+            <ToggleButton toggleGroup="$toggleGroupTasks" fx:id="tbProjection" onAction="#showTaskContent"
+                          maxWidth="Infinity">Projection/Selection
+            </ToggleButton>
+            <ToggleButton toggleGroup="$toggleGroupTasks" fx:id="tbJoin" onAction="#showTaskContent"
+                          maxWidth="Infinity">Join
+            </ToggleButton>
+            <ToggleButton toggleGroup="$toggleGroupTasks" fx:id="tbGroupBy" onAction="#showTaskContent"
+                          maxWidth="Infinity">Group By
+            </ToggleButton>
+            <ToggleButton toggleGroup="$toggleGroupTasks" fx:id="tbHaving" onAction="#showTaskContent"
+                          maxWidth="Infinity">Having
+            </ToggleButton>
+            <ToggleButton toggleGroup="$toggleGroupTasks" fx:id="tbNested" onAction="#showTaskContent"
+                          maxWidth="Infinity">Nested Aggregation
+            </ToggleButton>
+            <ToggleButton toggleGroup="$toggleGroupTasks" fx:id="tbDivision" onAction="#showTaskContent"
+                          maxWidth="Infinity">Division
+            </ToggleButton>
+
+        </VBox>
+    </left>
+    <!-- CENTER PANEL Task area -->
+    <center>
+        <!-- center panel will display one of the task grids depending on user selection-->
+        <!-- by setting its visible attribute to true, only one can be true at a time-->
+        <!-- managed property is true (I read this is needed)-->
+        <GridPane style="-fx-padding: 10 10 10 10" hgap="10" vgap="10">
+            <!-- -->
+            <GridPane fx:id="gridInsert" visible="false" managed="true">
+                <fx:include fx:id="insertContent" source="insertContent.fxml"/>
+            </GridPane>
+            <!-- -->
+            <GridPane fx:id="gridDelete" visible="false" managed="true">
+                <fx:include fx:id="deleteContent" source="deleteContent.fxml"/>
+            </GridPane>
+            <!-- -->
+            <GridPane fx:id="gridUpdate" visible="false" managed="true">
+                <fx:include fx:id="updateContent" source="updateContent.fxml"/>
+            </GridPane>
+            <!-- -->
+            <GridPane fx:id="gridSelection" visible="false" managed="true">
+                <fx:include fx:id="selectionContent" source="selectionContent.fxml"/>
+            </GridPane>
+            <!-- -->
+            <GridPane fx:id="gridProjection" visible="false" managed="true">
+                <fx:include fx:id="projectionContent" source="projectionContent.fxml"/>
+            </GridPane>
+            <!-- -->
+            <GridPane fx:id="gridJoin" visible="false" managed="true">
+                <fx:include fx:id="joinContent" source="joinContent.fxml"/>
+            </GridPane>
+            <!-- -->
+            <GridPane fx:id="gridGroupBy" visible="false" managed="true">
+                <fx:include fx:id="groupByContent" source="groupByContent.fxml"/>
+            </GridPane>
+            <!-- -->
+            <GridPane fx:id="gridHaving" visible="false" managed="true">
+                <fx:include fx:id="havingContent" source="havingContent.fxml"/>
+            </GridPane>
+            <!-- -->
+            <GridPane fx:id="gridNested" visible="false" managed="true">
+                <fx:include fx:id="nestedContent" source="nestedContent.fxml"/>
+            </GridPane>
+            <!-- -->
+            <GridPane fx:id="gridDivision" visible="false" managed="true">
+                <fx:include fx:id="divisionContent" source="divisionContent.fxml"/>
+            </GridPane>
+            <GridPane fx:id="gridWelcome" visible="false" managed="true">
+                <fx:include fx:id="welcomeContent" source="welcomeContent.fxml"/>
+            </GridPane>
+            <!-- TEMP -->
+            <GridPane fx:id="gridSample" visible="false" managed="true">
+                <fx:include fx:id="sampleContent" source="sampleContent.fxml"/>
+            </GridPane>
+        </GridPane>
+    </center>
+    <right>
+    </right>
+    <bottom>
+
+        <HBox fx:id="hbSQL"  style="-fx-padding: 10 10 10 10"
+              maxHeight="Infinity"  maxWidth="Infinity" prefWidth="Infinity" spacing="10">
+            <ScrollPane fx:id="spSQL" prefViewportHeight="148.0" prefViewportWidth="139.0" prefWidth="1000" >
+
+            </ScrollPane>
+        </HBox>
+
+    </bottom>
+</BorderPane>
+

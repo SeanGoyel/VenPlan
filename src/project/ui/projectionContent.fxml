@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.controlsfx.control.*?>
+<?import project.util.DateTimePicker?>
+<?import javafx.scene.text.Text?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller= "project.ui.ProjectionContentController"
+            prefHeight="410.0" prefWidth="600.0">
+    <top>
+        <VBox maxWidth="Infinity" alignment="CENTER" style="-fx-padding: 10 10 10 10">
+            <Text fx:id="panelTitle">Selected Columns from Showing</Text>
+            <Text fx:id="panelSubTitle">Enter selection criteria on the right</Text>
+        </VBox>
+    </top>
+    <center>
+    <VBox>
+        <TableView fx:id="showingsTable" maxWidth="Infinity" maxHeight="Infinity" minWidth="600" >
+            <columns>
+                <TableColumn fx:id="colVenueName" text="Venue Name" prefWidth="160"/>
+                <TableColumn fx:id="colMovieTitle" text="Movie Title" prefWidth="160"/>
+                <TableColumn fx:id="colStartDtm" text="Start Time" prefWidth="140"/>
+                <TableColumn fx:id="colEndDtm" text="End Time" prefWidth="140"/>
+            </columns>
+        </TableView>
+    </VBox>
+    </center>
+
+
+    <right>
+        <GridPane fx:id="gridEdits"
+                  style="-fx-padding: 10 10 10 10" hgap="10" vgap="10">
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="0">
+                Advisory Rating: </Label>
+
+            <ComboBox GridPane.columnIndex="1" GridPane.rowIndex="0"
+                                fx:id="advRating" editable="true"/>
+
+
+
+
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="2">
+                Start Date Time:</Label>
+            <DateTimePicker GridPane.columnIndex="1" GridPane.rowIndex="2"
+                            fx:id="dtpStartDTM" />
+
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="3">
+                End Date Time:</Label>
+            <DateTimePicker GridPane.columnIndex="1" GridPane.rowIndex="3"
+                            fx:id="dtpEndDTM" />
+
+
+
+            <Button fx:id="btnOK" prefWidth="75" onAction="#saveButton" GridPane.columnIndex="1" GridPane.rowIndex="8">Submit</Button>
+
+            <Separator GridPane.columnIndex="1" GridPane.rowIndex="9"></Separator>
+
+
+
+
+
+        </GridPane>
+
+    </right>
+
+</BorderPane>

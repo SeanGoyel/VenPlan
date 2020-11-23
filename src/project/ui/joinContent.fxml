@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.controlsfx.control.SearchableComboBox?>
+<?import javafx.scene.text.Text?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller= "project.ui.JoinContentController"
+            prefHeight="410.0" prefWidth="600.0">
+    <top>
+        <VBox maxWidth="Infinity" alignment="CENTER" style="-fx-padding: 10 10 10 10">
+            <Text fx:id="panelTitle">Get Movies Where Artist has Role</Text>
+            <Text fx:id="panelSubTitle">Joining MovieCastCrew with Artist, Movie and Role</Text>
+        </VBox>
+    </top>
+    <center>
+        <VBox>
+            <TableView fx:id="movieTable" maxWidth="Infinity" maxHeight="Infinity" minWidth="442" >
+                <columns>
+                    <TableColumn fx:id="colMovieName" text="Movie Title" prefWidth="160"/>
+                    <TableColumn fx:id="colArtistName" text="Artist Name" prefWidth="140"/>
+                    <TableColumn fx:id="colRoleName" text="Role Name" prefWidth="140"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+
+
+    <right>
+        <GridPane fx:id="grid"
+                  style="-fx-padding: 5 5 5 5" hgap="5" vgap="5">
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="0">
+                Artist Name: </Label>
+
+            <SearchableComboBox GridPane.columnIndex="1" GridPane.rowIndex="0"
+                      fx:id="artists" editable="true"/>
+
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="2">Role Name:</Label>
+            <SearchableComboBox GridPane.columnIndex="1" GridPane.rowIndex="2"
+                                fx:id="roles" editable="true"/>
+
+
+            <Button fx:id="submit" prefWidth="75" onAction="#submit" GridPane.columnIndex="1" GridPane.rowIndex="8">Submit</Button>
+
+            <Separator GridPane.columnIndex="1" GridPane.rowIndex="9"></Separator>
+
+
+
+
+
+        </GridPane>
+
+    </right>
+
+</BorderPane>

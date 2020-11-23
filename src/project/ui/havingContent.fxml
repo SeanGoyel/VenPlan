@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller= "project.ui.HavingContentController"
+            prefHeight="400.0" prefWidth="664.0">
+
+    <top>
+        <VBox maxWidth="Infinity" alignment="CENTER" style="-fx-padding: 10 10 10 10">
+            <Text fx:id="panelTitle">Venues with Count of Theatres </Text>
+            <Text fx:id="panelSubTitle">Having at least a selected number of theatres</Text>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox>
+            <TableView fx:id="venueTable" >
+                <columns>
+                    <TableColumn fx:id="colTheatreCount" text="Number of Theatres" prefWidth="130"/>
+                    <TableColumn fx:id="colVenueName" text="Venue Name" prefWidth="150"/>
+
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+
+    <right>
+        <GridPane fx:id="grid"
+                  style="-fx-padding: 10 10 10 10" hgap="10" vgap="10">
+            <Label GridPane.columnIndex="0" GridPane.rowIndex="0">
+                Theatre Count >= : </Label>
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="0"
+                       fx:id="tfTheatreCount" editable="true"/>
+
+            <Button fx:id="submit" prefWidth="95" onAction="#submit" GridPane.columnIndex="2" GridPane.rowIndex="0">Submit</Button>
+
+
+
+            <Separator GridPane.columnIndex="1" GridPane.rowIndex="1"></Separator>
+
+
+
+
+
+        </GridPane>
+
+    </right>
+
+
+
+
+</BorderPane>
+
